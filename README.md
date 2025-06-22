@@ -32,8 +32,8 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 1.  **Clone the repository**
     ```sh
-    git clone <repository-url>
-    cd <project-directory>
+    git clone https://github.com/QuocLe2308/Badminton_Store.git
+    cd Badminton_Store
     ```
 
 2.  **Configure Database Connection**
