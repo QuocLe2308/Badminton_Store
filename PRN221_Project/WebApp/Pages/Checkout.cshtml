@@ -1,0 +1,398 @@
+﻿@page
+@model WebApp.Pages.CheckoutModel
+@{
+	Layout = "_Layout2";
+}
+
+	<section class="main-content-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<!-- BSTORE-BREADCRUMB START -->
+					<div class="bstore-breadcrumb">
+						<a href="index.html">HOMe</a>
+						<span><i class="fa fa-caret-right"></i></span>
+						<span>Your payment method</span>
+					</div>
+					<!-- BSTORE-BREADCRUMB END -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<h2 class="page-title">Choose your payment method </h2>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<!-- SHOPING-CART-MENU START -->
+					<div class="shoping-cart-menu">
+						<ul class="step">
+							<li class="step-todo first step-done">
+								<span><a href="Cart">01. Summary</a></span>
+							</li>
+							<li class="step-todo second step-done">
+								<span><a href="checkout-signin.html">02. Sign in</a></span>
+							</li>
+							<li class="step-todo third step-done">
+								<span><a href="Checkout-Address">03. Address</a></span>
+							</li>
+							<li class="step-todo four step-done">
+								<span><a href="Checkout-Shipping">04. Shipping</a></span>
+							</li>
+							<li class="step-current last" id="step_end">
+								<span>05. Payment</span>
+							</li>
+						</ul>
+					</div>
+					<!-- SHOPING-CART-MENU END -->
+					<!-- CART TABLE_BLOCK START -->
+					<div class="table-responsive">
+						<!-- TABLE START -->
+						<table class="table table-bordered" id="cart-summary">
+							<!-- TABLE HEADER START -->
+							<thead>
+								<tr>
+									<th class="cart-product">Product</th>
+									<th class="cart-description">Description</th>
+									<th class="cart-availability text-center">Availability</th>
+									<th class="cart-unit text-right">Unit price</th>
+									<th class="cart_quantity text-center">Qty</th>
+									<th class="cart-total text-right">Total</th>
+								</tr>
+							</thead>
+							<!-- TABLE HEADER END -->
+							<!-- TABLE BODY START -->
+						<tbody id="cart-body">
+								<!-- SINGLE CART_ITEM START -->
+								<tr>
+									<td class="cart-product">
+										<a href="#">
+											<img alt="Faded" src="img/product/cart-image3.jpg">
+										</a>
+									</td>
+									<td class="cart-description">
+										<p class="product-name"><a href="#">Faded Short Sleeves T-shirt</a></p>
+										<small>SKU : demo_1</small>
+										<small><a href="#">Size : S, Color : Orange</a></small>
+									</td>
+									<td class="cart-avail">
+										<span class="label label-success">In stock</span>
+									</td>
+									<td class="cart-unit">
+										<ul class="price text-right">
+											<li class="price">$16.51</li>
+										</ul>
+									</td>
+									<td class="cart_quantity text-center">
+										<span>1</span>
+									</td>
+									<td class="cart-total">
+										<span class="price">$16.51</span>
+									</td>
+								</tr>
+								<!-- SINGLE CART_ITEM END -->
+								<!-- SINGLE CART_ITEM START -->
+								<tr>
+									<td class="cart-product">
+										<a href="#">
+											<img alt="Blouse" src="img/product/cart-image2.jpg">
+										</a>
+									</td>
+									<td class="cart-description">
+										<p class="product-name"><a href="#">Summer Clothing Sleeves T-shirt</a></p>
+										<small>SKU : demo_2</small>
+										<small><a href="#">Size : S, Color : Blac</a></small>
+									</td>
+									<td class="cart-avail">
+										<span class="label label-success">In stock</span>
+									</td>
+									<td class="cart-unit">
+										<ul class="price text-right">
+											<li class="price special-price">$22.95</li>
+											<li class="price-percent-reduction">&nbsp;-15%&nbsp;</li>
+											<li class="old-price">$27.00</li>
+										</ul>
+									</td>
+									<td class="cart_quantity text-center">
+										<span>1</span>
+									</td>
+									<td class="cart-total">
+										<span class="price">$22.95</span>
+									</td>
+								</tr>
+								<!-- SINGLE CART_ITEM END -->
+								<!-- SINGLE CART_ITEM START -->
+								<tr>
+									<td class="cart-product">
+										<a href="#">
+											<img alt="Faded" src="img/product/cart-image1.jpg">
+										</a>
+									</td>
+									<td class="cart-description">
+										<p class="product-name"><a href="#">Casual Printed Dress</a></p>
+										<small>SKU : demo_3</small>
+										<small><a href="#">Size : L, Color : Green</a></small>
+									</td>
+									<td class="cart-avail">
+										<span class="label label-success">In stock</span>
+									</td>
+									<td class="cart-unit">
+										<ul class="price text-right">
+											<li class="price special-price">$23.40</li>
+											<li class="price-percent-reduction">&nbsp;-10%&nbsp;</li>
+											<li class="old-price">$26.00</li>
+										</ul>
+									</td>
+									<td class="cart_quantity text-center">
+										<span>1</span>
+									</td>
+									<td class="cart-total">
+										<span class="price">$23.40</span>
+									</td>
+								</tr>
+								<!-- SINGLE CART_ITEM END -->
+							</tbody>
+							<!-- TABLE BODY END -->
+							<!-- TABLE FOOTER START -->
+						<tfoot>
+							<tr class="cart-total-price">
+								<td class="cart_voucher" colspan="3" rowspan="4"></td>
+								<td class="text-right" colspan="3">Total products (tax excl.)</td>
+								<td id="total_product" class="price" colspan="1">$0.00</td>
+							</tr>
+							<tr>
+								<td class="text-right" colspan="3">Total shipping</td>
+								<td id="total_shipping" class="price" colspan="1">Free ship</td>
+							</tr>
+							<tr>
+								<td class="text-right" colspan="3">Total vouchers (tax excl.)</td>
+								<td class="price" colspan="1">0 ₫</td>
+							</tr>
+							<tr>
+								<td class="total-price-container text-right" colspan="3">
+									<span>Total</span>
+								</td>
+								<td id="total-price-container" class="price" colspan="1">
+									<span id="total-price">0đ</span>
+								</td>
+							</tr>
+						</tfoot>
+							<!-- TABLE FOOTER END -->
+						</table>
+						<!-- TABLE END -->
+					</div>
+					<!-- CART TABLE_BLOCK END -->
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<!-- FOUR-PAYMENT-METHOD START -->
+					<div class="four-payment-method">
+						<!-- SINGLE-PAYMENT-METHOD START -->
+						<div class="single-payment-method payment-method-one">
+						<a onclick="Checkout_delivery('pay');" href="#">Pay by bank wire<span> (order processing will be longer)</span><i class="fa fa-chevron-right"></i></a>
+						</div>
+						<!-- SINGLE-PAYMENT-METHOD END -->
+						<!-- SINGLE-PAYMENT-METHOD START -->
+						<div class="single-payment-method payment-method-two">
+						<a onclick="Checkout_delivery('nonepay');" href="#">Payment on delivery<span> (order processing will be longer)</span><i class="fa fa-chevron-right"></i></a>
+						</div>
+						<!-- SINGLE-PAYMENT-METHOD END -->
+					</div>
+					<!-- FOUR-PAYMENT-METHOD END -->
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<!-- RETURNE-CONTINUE-SHOP START -->
+					<div class="returne-continue-shop">
+					<a href="LandingPage" class="continueshoping"><i class="fa fa-chevron-left"></i>Continue shopping</a>
+					</div>
+					<!-- RETURNE-CONTINUE-SHOP END -->
+				</div>
+			</div>
+		</div>
+	</section>
+	<script>
+
+	function Checkout_delivery(type) {
+		// Hiển thị thông báo xác nhận từ người dùng
+		Swal.fire({
+			title: "Are you sure?",
+			text: "Are you sure you want to place an order?",
+			icon: "warning",
+			showCancelButton: true,
+			confirmButtonColor: "#3085d6",
+			cancelButtonColor: "#d33",
+			confirmButtonText: "Yes"
+		}).then((result) => {
+			if (result.isConfirmed) {
+				// Lấy dữ liệu từ cookie và giỏ hàng
+				const cookieInfoShipping = getCookie('infoshipping'); // Thay thế 'getCookie' với hàm lấy cookie thực tế của bạn
+				const cookieCart = getCookie('cart'); // Thay thế 'getCookie' với hàm lấy cookie thực tế của bạn
+
+				if (!cookieInfoShipping || !cookieCart) {
+					Swal.fire({
+						title: "Error",
+						text: "Your cart is empty or shipping information is missing. Please add items to the cart and provide shipping information.",
+						icon: "error"
+					});
+					return;
+				}
+
+				const cookieData = JSON.parse(cookieInfoShipping);
+				const cartData = JSON.parse(cookieCart);
+
+				if (!cookieData || !cartData || cartData.length === 0) {
+					Swal.fire({
+						title: "Error",
+						text: "Your cart is empty or shipping information is missing. Please add items to the cart and provide shipping information.",
+						icon: "error"
+					});
+					return;
+				}
+
+				// Gửi dữ liệu đến controller
+				$.ajax({
+					url: '/CartOrder/CreateOrder', // Địa chỉ URL của controller để tạo đơn hàng
+					method: 'POST',
+					contentType: 'application/json',
+					data: JSON.stringify({ shippingInfo: cookieData, cartItems: cartData }),
+					success: function (response) {
+
+						console.log('Order creation response:', response);
+						// Xử lý khi đơn hàng được tạo thành công
+						deleteCookie('cart');
+						if (type == "pay") {
+							// Hiển thị spinner khi đang tải QR code
+							Swal.fire({
+								title: 'Generating QR Code...',
+								html: '<i class="fa fa-spinner fa-spin"></i>',
+								showConfirmButton: false,
+								allowOutsideClick: false
+							});
+
+							// Gửi yêu cầu tạo mã QR
+							$.ajax({
+								url: 'https://api.vietqr.io/v2/generate',
+								type: 'POST',
+								contentType: 'application/json',
+								data: JSON.stringify({
+									accountNo: 9073399999,
+									accountName: "NGUYEN PHUOC LOC",
+									acqId: 970436,
+									amount: response.totalAmount,
+									addInfo: "THANHTOAN" + response.orderID,
+									format: "text",
+									template: "compact"
+								}),
+								success: function (qrResponse) {
+									if (qrResponse.code === "00") {
+										// Hiển thị QR code và bắt đầu kiểm tra thanh toán
+										Swal.fire({
+											title: 'Please scan QR to Payment!',
+											imageUrl: qrResponse.data.qrDataURL,
+											imageAlt: 'QR Code',
+											confirmButtonText: 'Close'
+										});
+
+										// Lấy orderId từ qrResponse hoặc từ nguồn khác
+										var orderId = response.orderID; // Giả sử orderId đã được khởi tạo từ qrResponse
+
+										// Thực hiện vòng lặp kiểm tra thanh toán mỗi giây 1 lần
+										var checkInterval = setInterval(function () {
+											// Gửi request đến endpoint CheckPayment/id
+											$.ajax({
+												url: 'CartOrder/CheckPayment/' + orderId,
+												type: 'GET', // Hoặc 'GET' tùy vào phương thức của API của bạn
+												contentType: 'application/json',
+												success: function (response) {
+													if (response.status == "success") {
+														// Đóng hộp thoại QR code nếu đã thanh toán thành công
+														Swal.close();
+														// Dừng vòng lặp nếu đã thanh toán thành công
+														clearInterval(checkInterval);
+														// Hiển thị thông báo thanh toán thành công
+														Swal.fire({
+															title: 'Payment verified!',
+															text: 'Your payment has been successfully verified.',
+															icon: 'success',
+															confirmButtonText: 'Close'
+														}).then(() => {
+															// Xóa cookie cart
+															deleteCookie('cart');
+															window.location.href = '/LandingPage';
+														});
+
+														
+													} else {
+														console.log('Payment not yet verified. Checking again in 1 second.');
+													}
+												},
+												error: function (xhr, status, error) {
+													console.error('Error checking payment status:', error);
+												}
+											});
+										}, 1000);
+									} else {
+										Swal.fire({
+											title: 'Error',
+											text: 'Failed to generate QR code. Please try again later.',
+											icon: 'error'
+										});
+									}
+								},
+								error: function (xhr, status, error) {
+									console.error('Error generating QR code:', error);
+									Swal.fire({
+										title: 'Error',
+										text: 'Failed to generate QR code. Please try again later.',
+										icon: 'error'
+									});
+								}
+							});
+						} else {
+							Swal.fire({
+								title: "Order Placed!",
+								html: `Your order has been placed successfully.<br>Order ID: <strong>${response.orderID}</strong>`,
+								icon: "success"
+							}).then(() => {
+								// Xóa cookie cart
+								deleteCookie('cart');
+								window.location.href = '/LandingPage';
+							});
+						}
+					},
+					error: function (xhr, status, error) {
+						// Xử lý khi có lỗi xảy ra
+						console.error('Error creating order:', error);
+						let errorMessage = "Failed to place order. Please try again later.";
+						if (xhr.status === 400) {
+							errorMessage = xhr.responseText;
+						}
+						Swal.fire({
+							title: "Error",
+							text: errorMessage,
+							icon: "error"
+						});
+					}
+				});
+			}
+		});
+	}
+
+
+
+
+	function getCookie(name) {
+		const cookies = document.cookie.split(';');
+		for (let i = 0; i < cookies.length; i++) {
+			const cookie = cookies[i].trim();
+			if (cookie.startsWith(name + '=')) {
+				return cookie.substring(name.length + 1);
+			}
+		}
+		return '';
+	}
+	function deleteCookie(name) {
+		document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+	}
+	
+	</script>
+	<!-- MAIN-CONTENT-SECTION END -->
+	<!-- BRAND-CLIENT-AREA START -->
+	

@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp.csproj", "{46B5F32E-15C3-4956-9A01-1CA5F320F2E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLayer", "BusinessLayer", "{7BB5E870-5258-4044-95E5-8781E436DAC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccessLayer", "DataAccessLayer", "{45E008E2-FD80-4108-9E62-A1568EEF5A8D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "..\BusinessLayer\BusinessLayer.csproj", "{90724D3B-7E9F-45AD-AAC4-E01ADB65DC5B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "..\DataAccessLayer\DataAccessLayer.csproj", "{D65BF05F-EFEE-43AE-BE05-4F5F44D47F87}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PresentationLayer", "PresentationLayer", "{66A08079-C292-432A-ABDA-1D059206A233}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataGrid", "C:\Users\ASUS\Desktop\WPF-DataTable-Dashboard-master (2)\WPF-DataTable-Dashboard-master\DataGrid.csproj", "{8BF42C54-4C28-43C1-A641-C366D830B902}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46B5F32E-15C3-4956-9A01-1CA5F320F2E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46B5F32E-15C3-4956-9A01-1CA5F320F2E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46B5F32E-15C3-4956-9A01-1CA5F320F2E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46B5F32E-15C3-4956-9A01-1CA5F320F2E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90724D3B-7E9F-45AD-AAC4-E01ADB65DC5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90724D3B-7E9F-45AD-AAC4-E01ADB65DC5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90724D3B-7E9F-45AD-AAC4-E01ADB65DC5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90724D3B-7E9F-45AD-AAC4-E01ADB65DC5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D65BF05F-EFEE-43AE-BE05-4F5F44D47F87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D65BF05F-EFEE-43AE-BE05-4F5F44D47F87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D65BF05F-EFEE-43AE-BE05-4F5F44D47F87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D65BF05F-EFEE-43AE-BE05-4F5F44D47F87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BF42C54-4C28-43C1-A641-C366D830B902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BF42C54-4C28-43C1-A641-C366D830B902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BF42C54-4C28-43C1-A641-C366D830B902}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BF42C54-4C28-43C1-A641-C366D830B902}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{46B5F32E-15C3-4956-9A01-1CA5F320F2E7} = {66A08079-C292-432A-ABDA-1D059206A233}
+		{90724D3B-7E9F-45AD-AAC4-E01ADB65DC5B} = {7BB5E870-5258-4044-95E5-8781E436DAC4}
+		{D65BF05F-EFEE-43AE-BE05-4F5F44D47F87} = {45E008E2-FD80-4108-9E62-A1568EEF5A8D}
+		{8BF42C54-4C28-43C1-A641-C366D830B902} = {66A08079-C292-432A-ABDA-1D059206A233}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13BECF18-412D-4ACE-8037-38B496672910}
+	EndGlobalSection
+EndGlobal

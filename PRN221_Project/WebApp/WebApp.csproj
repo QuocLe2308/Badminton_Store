@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\assets\vendors\datatables.net-bs4\dataTables.bootstrap4.css" />
+    <Content Remove="wwwroot\assets\vendors\datatables.net-bs4\dataTables.bootstrap4.js" />
+    <Content Remove="wwwroot\assets\vendors\datatables.net\jquery.dataTables.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="4.6.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.6">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.3" />
+    <PackageReference Include="MimeKit" Version="4.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\assets\css\vertical-light\" />
+    <Folder Include="wwwroot\assets\images\auth\" />
+    <Folder Include="wwwroot\assets\vendors\font-awesome\css\" />
+    <Folder Include="wwwroot\uploads\" />
+    <Folder Include="wwwroot\watermark\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\vendors\datatables.net-bs4\dataTables.bootstrap4.css" />
+    <None Include="wwwroot\assets\vendors\datatables.net-bs4\dataTables.bootstrap4.js" />
+    <None Include="wwwroot\assets\vendors\datatables.net\jquery.dataTables.js" />
+    <None Include="wwwroot\fonts\fontawesome-webfonte0a5.svg" />
+    <None Include="wwwroot\fonts\fontawesome-webfonte0a5.woff2" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\js\vendor\jquery-1.11.3.min.js" />
+    <None Include="wwwroot\js\vendor\modernizr-2.6.2.min.js" />
+    <None Include="wwwroot\style.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj" />
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
+  </ItemGroup>
+
+</Project>

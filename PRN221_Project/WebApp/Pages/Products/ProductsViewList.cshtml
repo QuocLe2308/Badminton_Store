@@ -1,0 +1,70 @@
+﻿@page
+@model WebApp.Pages.Products.ProductsViewList
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Product</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Product List</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Product List</h4>
+                <div class="row">
+                    <div class="col-12">
+                        <div style="overflow-x:auto;">
+                            <table id="order-listing" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Product Name</th>
+                                        <th>Price</th>
+                                        <th>Stock Quantity</th>
+                                        <th>Image URL</th>
+                                        <th>Category</th>
+                                        <th>Brand</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var product in Model.Product)
+                                    {
+                                        <tr>
+                                            <td>@product.ProductName</td>
+                                            <td>@product.Price</td>
+                                            <td>@product.StockQuantity</td>
+                                            <td>
+                                                <a href="@product.ImageURL">View <i class="mdi mdi-eye"></i> </a>
+                                            </td>
+                                            <td>@product.Category.CategoryName</td>
+                                            <td>@product.Brand.BrandName</td>
+                                            <td>
+                                                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@product.ProductID"><i class="mdi mdi-tooltip-edit"></i></a>
+                                                <a class="btn btn-info" asp-page="./Details" asp-route-id="@product.ProductID"><i class="mdi mdi-information-outline"></i></a>
+                                                <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@product.ProductID"><i class="mdi mdi-delete-forever"></i></a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/assets/vendors/datatables.net/jquery.dataTables.js"></script>
+<script src="~/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+<script src="~/assets/js/settings.js"></script>
+<script src="~/assets/js/todolist.js"></script>
+<script src="~/assets/js/jquery.cookie.js"></script>
+<script src="~/assets/js/data-table.js"></script>

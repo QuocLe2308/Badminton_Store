@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using DataAccessLayer.DbContext;
+using DataAccessLayer.Models;
+
+namespace WebApp.Pages.Users
+{
+    public class IndexModel : PageModel
+    {
+        private readonly DataAccessLayer.DbContext.ApplicationDbContext _context;
+
+        public IndexModel(DataAccessLayer.DbContext.ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        public IList<User> User { get;set; } = default!;
+
+        public async Task<IActionResult> OnGetAsync()
+        {
+            int id = 2;
+            return RedirectToPage("/Users/Details", new { id = id });
+        }
+    }
+}

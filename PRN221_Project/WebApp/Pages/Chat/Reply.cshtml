@@ -1,0 +1,63 @@
+﻿@page
+@model WebApp.Pages.Chat.ReplyModel
+
+@{
+    ViewData["Title"] = "Chat";
+    string UserName = HttpContext.Session.GetString("UserName") ?? "";
+    int CustomerID = HttpContext.Session.GetInt32("UserId") ?? 0;
+}
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h2>@ViewData["Title"]</h2>
+        </div>
+        <div class="card-body d-flex flex-column">
+            <div class="flex-grow-1 overflow-auto">
+                <ul id="messagesList" class="list-group">
+                    @foreach (var message in Model.Messages)
+                    {
+                        <li class="list-group-item">@($"{message.User.Username}: {message.MessageSend} ({message.TimeSend.ToString("HH:mm:ss")})")</li>
+                    }
+                </ul>
+            </div>
+            <div class="mt-3 d-flex">
+                <input type="hidden" id="userInput" value="@CustomerID" />
+                <input type="hidden" id="userInputusername" value="@UserName" />
+                <input type="text" id="messageInput" class="form-control me-2" placeholder="Type your message..." />
+                <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.11/signalr.min.js"></script>
+    <script>
+        const userId = document.getElementById("userInput").value;
+        const Customerusername = document.getElementById("userInputusername").value;
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/ChatHubs")
+            .build();
+
+        connection.on("ReceiveMessage", (userId, message, timestamp) => {
+            const msg = `${Customerusername}: ${message} (${new Date(timestamp).toLocaleTimeString()})`;
+            const li = document.createElement("li");
+            li.textContent = msg;
+            li.classList.add("list-group-item");
+            document.getElementById("messagesList").appendChild(li);
+        });
+
+        connection.start()
+            .then(() => console.log("SignalR Connected"))
+            .catch(err => console.error("SignalR Connection Error: ", err.toString()));
+
+        function sendMessage() {
+            const message = document.getElementById("messageInput").value;
+            connection.invoke("SendMessage", userId, message)  // Pass userId here
+                .catch(err => console.error("SignalR Send Error: ", err.toString()));
+
+            document.getElementById("messageInput").value = ""; // Clear input field after sending
+        }
+    </script>
+}

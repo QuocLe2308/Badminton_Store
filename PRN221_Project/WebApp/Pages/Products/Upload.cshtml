@@ -1,0 +1,22 @@
+﻿@page
+@model UploadModel
+@{
+    ViewData["Title"] = "Upload Image";
+}
+
+<h2>Upload Image</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="file">Choose file to upload</label>
+        <input type="file" id="file" name="file" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+
+@if (Model.UploadResult != null)
+{
+    <div class="alert alert-success mt-3">
+        Image uploaded successfully. <a href="@Model.UploadResult.Url" target="_blank">View Image</a>
+    </div>
+}

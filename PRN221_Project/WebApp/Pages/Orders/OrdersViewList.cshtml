@@ -1,0 +1,83 @@
+﻿@page
+@model WebApp.Pages.Orders.OrdersViewList
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Orders</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Orders list</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Orders list</h4>
+                <div class="row">
+                    <div class="col-12">
+                        <div style="overflow-x:auto;">
+                            <table id="order-listing" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Order[0].OrderDate)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Order[0].TotalAmount)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Order[0].ShippingAddress)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Order[0].Status)
+                                        </th
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var order in Model.Order)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => order.OrderDate)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => order.TotalAmount)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => order.ShippingAddress)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => order.Status)
+                                            </td>
+                                           
+                                            <td>
+                                                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@order.OrderID"><i class="mdi mdi-tooltip-edit"></i></a>
+                                                <a class="btn btn-info" asp-page="./Details" asp-route-id="@order.OrderID"><i class="mdi mdi-information-outline"></i></a>
+                                                <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@order.OrderID"><i class="mdi mdi-delete-forever"></i></a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="~/assets/vendors/datatables.net/jquery.dataTables.js"></script>
+<script src="~/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+<script src="~/assets/js/settings.js"></script>
+<script src="~/assets/js/todolist.js"></script>
+<script src="~/assets/js/jquery.cookie.js"></script>
+<script src="~/assets/js/data-table.js"></script>
