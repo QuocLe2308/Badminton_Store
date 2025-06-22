@@ -1,4 +1,4 @@
-# Badminton Store Backend
+# Badminton Store
 
 A backend system for an e-commerce platform specializing in badminton rackets, shuttles, and related gear. Built with ASP.NET Core, this project handles the core functionalities of the online store, including order processing, inventory management, and payment verification.
 
